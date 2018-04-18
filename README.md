@@ -2,7 +2,7 @@ Flume-PostgreSQLSink
 =============
 A library of Flume sinks for postgreSQL
 
-##Getting Started
+## Getting Started
 ----
 1. Clone the repository
 2. Install latest Maven and build source by 'mvn package'
@@ -10,7 +10,7 @@ A library of Flume sinks for postgreSQL
 4. Append classpath in $FLUME_HOME/conf/flume-env.sh
 5. Add the sink definition according to **Configuration**
 
-##Source data format:
+## Source data format:
 - - - 
     Source data format must be JSON string, for example:
           
