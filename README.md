@@ -78,8 +78,7 @@ A library of Flume sinks for postgreSQL
 
 ## 执行数据类型时的映射关系（对大小写不敏感）
 
-
-- - -
+```
     数据类型          ==>  指定值
     Types.VARCHAR    ==>  VARCHAR
     Types.VARCHAR    ==>  TEXT
@@ -96,39 +95,40 @@ A library of Flume sinks for postgreSQL
     Types.DATE       ==>  DATE
     Types.TIME       ==>  TIME
     Types.TIMESTAMP  ==>  TIMESTAMP
-
+```
 
 ## 指定表明的方法
 
 1. 最简单的方案，手动配置表明
 
-- - - 
+```
     agent.sinks.sink1.model = custom
     agent.sinks.sink1.table_name = data
+```
 
  2. 还支持在数据中指定该数据需要插入的表名
 
-- - -
+```
     agent.sinks.sink1.model = by_column_name
     agent.sinks.sink1.table_name_by = check_table_name
-
+```
 这这种方法之下，需要传入的数据格式是：
 
-- - - 
+```
     {
         "data": {
             "check_table_name": "data{{ 修改为你要存放的表名 }}",
             ……
         } 
     }
-    
+```
 ## 注意
 
 传入的数据中，即使是int类型等，也需要用引号引起来，程序中会以字符串的形式提取，在强制转换成配置文件中配置的数据类型。
 我的实验样例
-- - -
+```
     { "data": {"field1": "value1", "field2": "121", "createdtime": "2018-12-12 12:12:12", "time": "1235623545" } }
-
+```
 ## About the director jar_libs
 - - - 
     Copy the json-simple-1.1.1.jar and postgresql-9.4.1208.jre7.jar to the path 'xxx/flume/lib/'.And you can update these jar as necessary.
