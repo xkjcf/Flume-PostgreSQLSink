@@ -98,7 +98,6 @@ A library of Flume sinks for postgreSQL
 ```
 
 ## 指定表明的方法
-
 1. 最简单的方案，手动配置表明
 
 ```
@@ -106,7 +105,7 @@ A library of Flume sinks for postgreSQL
     agent.sinks.sink1.table_name = data
 ```
 
- 2. 还支持在数据中指定该数据需要插入的表名
+2. 还支持在数据中指定该数据需要插入的表名
 
 ```
     agent.sinks.sink1.model = by_column_name
